@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import { ref, toRefs, onMounted } from 'vue';
+import { ref, toRefs, onMounted, computed } from 'vue';
 import type { Artist } from '@/models/artist';
 import type { Track } from '@/models/track';
 import { useSongStore } from '@/stores/songStore.js'
 import { storeToRefs } from 'pinia';
-
-const useSong = useSongStore()
-const { isPlaying, currentTrack } = storeToRefs(useSong)
+import { useLikeSongStore } from '@/stores/likeSongStore';
 
 interface Props {
   track: Track;
@@ -16,6 +14,18 @@ interface Props {
 
 const props = defineProps<Props>();
 const { track, artist, index } = toRefs(props);
+
+const useSong = useSongStore()
+const { isPlaying, currentTrack } = storeToRefs(useSong)
+
+const useLikeSong = useLikeSongStore();
+const {toggleLikeSong} = useLikeSong;
+const { likeSongs } = storeToRefs(useLikeSong);
+
+const isLiked = computed(() => {
+  const { id } = track.value!;
+  return likeSongs.value.some((song: Track) => song.id === id);
+});
 
 const isHover = ref(false);
 const isTrackTime = ref();
@@ -96,9 +106,10 @@ onMounted(calculateTrackTime);
     </div>
     <div class="flex items-center">
       <Button
-        class="border-none fill-heart"
-        icon="pi pi-heart-fill"
-        v-if="isHover"
+        
+        @click="toggleLikeSong(track)"
+        class="border-none"
+        :icon="isLiked ? 'pi pi-heart-fill' : 'pi pi-heart'"
         rounded
       />
       <div v-if="isTrackTime" class="text-xs mx-5 text-gray-400">

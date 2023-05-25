@@ -55,39 +55,39 @@
       "releaseYear": "2022",
       "tracks": [
         {
-          "id": 1,
+          "id": 10,
           "name": "Fame",
           "path": "/songs/pop/Fame.mp3"
         },
         {
-          "id": 2,
+          "id": 11,
           "name": "HotSax",
           "path": "/songs/pop/HotSax.mp3"
         },
         {
-          "id": 3,
+          "id": 12,
           "name": "Night",
           "path": "/songs/pop/Night.mp3"
         },
         {
-          "id": 4,
+          "id": 13,
           "name": "Red",
-          "path": "/songs/rock-indie/Red.mp3"
+          "path": "/songs/pop/Red.mp3"
         },
         {
-          "id": 5,
+          "id": 14,
           "name": "Secret Contract",
           "path": "/songs/pop/Secret Contract.mp3"
         },
         {
-          "id": 6,
+          "id": 15,
           "name": "Starlight",
           "path": "/songs/pop/Starlight.mp3"
         },
         {
-          "id": 7,
+          "id": 16,
           "name": "Sunny Day",
-          "path": "/songs/rock-indie/Sunny Day.mp3"
+          "path": "/songs/pop/Sunny Day.mp3"
         }
       ]
     }

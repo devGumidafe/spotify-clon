@@ -119,14 +119,6 @@ watch(
           </div>
         </div>
       </div>
-      <div class="flex items-center ml-8">
-        <Button
-          class="border-0"
-          icon="pi pi-heart"
-          aria-label="Heart"
-          rounded
-        />
-      </div>
     </div>
 
     <div class="max-w-[35%] mx-auto w-2/4 mb-3">

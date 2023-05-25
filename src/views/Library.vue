@@ -10,8 +10,7 @@ const props = defineProps<{
 }>();
 
 const useSong = useSongStore();
-const { isPlaying, currentTrack, currentArtist, currentPlayList } =
-  storeToRefs(useSong);
+const { isPlaying, currentTrack, currentArtist, currentPlayList } = storeToRefs(useSong);
 
 const playFunc = () => {
   if (currentTrack.value && currentArtist.value) {
@@ -79,18 +78,6 @@ onMounted(() => {
             @click="playFunc()"
             icon="pi pi-pause"
             aria-label="Pause"
-            rounded
-          />
-          <Button
-            class="border-0"
-            icon="pi pi-heart"
-            aria-label="Heart"
-            rounded
-          />
-          <Button
-            class="border-0"
-            icon="pi pi-ellipsis-h"
-            aria-label="DotsHorizontal"
             rounded
           />
         </div>

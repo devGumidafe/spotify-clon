@@ -22,7 +22,7 @@ import ItemSideBar from '@/components/side-bar/ItemSideBar.vue';
         pageUrl="search"
       />
     </RouterLink>
-    <RouterLink :to="{ name: 'library', params: { artistId: 1}}">
+    <RouterLink :to="{ name: 'library', params: { artistId: 1 } }">
       <ItemSideBar
         class="ml-[2px]"
         :iconSize="23"
@@ -32,14 +32,15 @@ import ItemSideBar from '@/components/side-bar/ItemSideBar.vue';
       />
     </RouterLink>
     <div class="py-3.5"></div>
-
-    <ItemSideBar
-      class="-ml-[1px]"
-      :iconSize="27"
-      name="Liked Songs"
-      iconString="liked"
-      pageUrl="liked"
-    />
+    <RouterLink to="/liked">
+      <ItemSideBar
+        class="-ml-[1px]"
+        :iconSize="27"
+        name="Liked Songs"
+        iconString="liked"
+        pageUrl="liked"
+      />
+    </RouterLink>
   </ul>
 </template>
 

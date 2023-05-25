@@ -90,6 +90,14 @@
           "path": "/songs/pop/Sunny Day.mp3"
         }
       ]
+    },
+    {
+      "id": 3,
+      "name": "Liked Songs",
+      "albumCover": "/images/albumCovers/liked-music.webp",
+      "releaseYear": "2023",
+      "tracks": [
+      ]
     }
   ]
 }

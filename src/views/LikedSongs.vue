@@ -1,12 +1,17 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import SongRow from '@/components/SongRow.vue';
 import type { Artist } from '@/models/artist';
 import { useSongStore } from '@/stores/songStore';
 import { storeToRefs } from 'pinia';
+import type { Track } from '@/models/track';
+import { useLikeSongStore } from '../stores/likeSongStore';
 
 const useSong = useSongStore();
 const { isPlaying, currentTrack, currentArtist, currentPlayList } = storeToRefs(useSong);
+
+const useLikeSong = useLikeSongStore();
+const { likeSongs } = storeToRefs(useLikeSong);
 
 const playFunc = () => {
   if (currentTrack.value && currentArtist.value) {
@@ -17,10 +22,17 @@ const playFunc = () => {
 };
 
 const artist = ref<Artist>();
+const likedTracks = ref<Track[]>(likeSongs.value);
 
 onMounted(() => {
-  useSong.loadPlayList(1);
+  useSong.loadPlayList(3);
   artist.value = currentPlayList.value;
+  artist.value.tracks = likedTracks.value; 
+});
+
+watch(likeSongs, () => {
+  likedTracks.value = likeSongs.value;
+  artist.value.tracks = likedTracks.value;
 });
 </script>
 
@@ -30,7 +42,7 @@ onMounted(() => {
       class="text-white text-2xl font-semibold border-2 border-[#20d464] p-3 inline-block"
       label=""
     >
-      Liked Songs
+      {{ artist.name }}
     </div>
 
     <div class="py-1.5"></div>
@@ -95,12 +107,14 @@ onMounted(() => {
       <div class="mb-4"></div>
 
       <ul
-        class="w-full"
+        v-if="artist.tracks.length > 0"
         v-for="(track, index) in artist.tracks"
+        class="w-full"
         :key="track.id"
       >
         <SongRow :artist="artist" :track="track" :index="index" />
       </ul>
+      <div v-else class="text-white text-center">No songs found</div>
     </div>
   </div>
 </template>

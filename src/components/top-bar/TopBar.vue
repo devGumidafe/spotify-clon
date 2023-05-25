@@ -7,7 +7,6 @@ const menu = ref();
 const toggleMenu = (event: any) => {
   openMenu.value = !openMenu.value;
   menu.value.toggle(event);
-  console.log('menu', menu.value);
 };
 
 const menuItems = ref([
@@ -19,7 +18,7 @@ const menuItems = ref([
     label: 'Logout',
     icon: 'pi pi-sign-out',
     command: () => {
-      console.log('Cerrar sesión');
+     
     },
   },
 ]);
@@ -30,18 +29,6 @@ const menuItems = ref([
     class="w-[calc(100%-240px)] h-[60px] fixed right-0 z-20 bg-[#101010] bg-opacity-80 flex items-center justify-between"
   >
     <div class="flex item-center ml-6">
-      <Button
-        icon="pi pi-angle-left"
-        class="custom-button"
-        rounded
-        aria-label="ChevronLeft"
-      />
-      <Button
-        icon="pi pi-angle-right"
-        class="custom-button ml-4"
-        rounded
-        aria-label="ChevronRight"
-      />
     </div>
     <div
       class="flex items-center rounded-full p-0.5 mr-6 mt-0.5 cursor-pointer bg-black hover:bg[#282828]"

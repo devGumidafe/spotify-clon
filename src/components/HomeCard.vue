@@ -12,7 +12,7 @@ const { image, title, subTitle } = toRefs(props);
 </script>
 
 <template>
-  <RouterLink to="library">
+  <RouterLink :to="{ name: 'library', params: { artistId: 1}}">
     <Card class="bg-[#111111] p-2 m-2 hover:bg-[#252525] cursor-pointer">
       <template #header>
         <Image class="rounded-md" :src="image" :alt="title" />

@@ -15,8 +15,9 @@ const router = createRouter({
       component: () => import('@/views/Search.vue'),
     },
     {
-      path: '/library',
+      path: '/library:artistId',
       name: 'library',
+      props: true,
       component: () => import('@/views/Library.vue'),
     },
   ],

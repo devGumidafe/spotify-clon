@@ -9,13 +9,14 @@ randColor.value = uniqolor.random();
 const props = defineProps({
   category: String,
   image: String,
+  artistId: Number,
 });
 
-const { category } = toRefs(props);
+const { category, artistId } = toRefs(props);
 </script>
 
 <template>
-  <RouterLink to="/library">
+  <RouterLink :to="{ name: 'library', params: { artistId: artistId}}">
     <div
       v-if="randColor.color"
       :style="`background-color: ${randColor.color};`"

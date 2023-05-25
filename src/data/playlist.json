@@ -1,0 +1,95 @@
+{
+  "playList": [
+    {
+      "id": 1,
+      "name": "Rock Indie",
+      "albumCover": "/images/albumCovers/rock-indie.webp",
+      "releaseYear": "2021",
+      "tracks": [
+        {
+          "id": 1,
+          "name": "Aim",
+          "path": "/songs/rock-indie/Aim.mp3"
+        },
+        {
+          "id": 2,
+          "name": "Galaxy",
+          "path": "/songs/rock-indie/Galaxy.mp3"
+        },
+        {
+          "id": 3,
+          "name": "Harsh",
+          "path": "/songs/rock-indie/Harsh.mp3"
+        },
+        {
+          "id": 4,
+          "name": "Metalic",
+          "path": "/songs/rock-indie/Metalic.mp3"
+        },
+        {
+          "id": 5,
+          "name": "Run",
+          "path": "/songs/rock-indie/Run.mp3"
+        },
+        {
+          "id": 6,
+          "name": "The Final Fight",
+          "path": "/songs/rock-indie/The Final Fight.mp3"
+        },
+        {
+          "id": 7,
+          "name": "Top One",
+          "path": "/songs/rock-indie/Top One.mp3"
+        },
+        {
+          "id": 8,
+          "name": "Uncontrollable",
+          "path": "/songs/rock-indie/Uncontrollable.mp3"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Pop",
+      "albumCover": "/images/albumCovers/pop.webp",
+      "releaseYear": "2022",
+      "tracks": [
+        {
+          "id": 1,
+          "name": "Fame",
+          "path": "/songs/pop/Fame.mp3"
+        },
+        {
+          "id": 2,
+          "name": "HotSax",
+          "path": "/songs/pop/HotSax.mp3"
+        },
+        {
+          "id": 3,
+          "name": "Night",
+          "path": "/songs/pop/Night.mp3"
+        },
+        {
+          "id": 4,
+          "name": "Red",
+          "path": "/songs/rock-indie/Red.mp3"
+        },
+        {
+          "id": 5,
+          "name": "Secret Contract",
+          "path": "/songs/pop/Secret Contract.mp3"
+        },
+        {
+          "id": 6,
+          "name": "Starlight",
+          "path": "/songs/pop/Starlight.mp3"
+        },
+        {
+          "id": 7,
+          "name": "Sunny Day",
+          "path": "/songs/rock-indie/Sunny Day.mp3"
+        }
+      ]
+    }
+  ]
+}

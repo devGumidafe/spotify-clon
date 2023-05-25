@@ -49,7 +49,7 @@ const isHover = () => {
         :class="textIsHover ? 'text-white ' : 'text-gray-400'"
         class="font-semibold text-[14px] ml-4 mt-0.5"
       >
-        <span :class="[route.path === pageUrl ? 'text-white' : '']">{{
+        <span :class="[route.name === pageUrl ? 'text-white' : '']">{{
           name
         }}</span>
       </div>

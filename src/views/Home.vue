@@ -6,10 +6,12 @@ import HomeCard from '@/components/HomeCard.vue';
 
 <template>
   <div class="p-4">
-    <Button
-      class="text-white text-2xl font-semibold cursor-pointer"
-      label="Podcast to make you smarter"
-    />
+    <div
+      class="text-white text-2xl font-semibold border-2 border-[#20d464] p-3 inline-block"
+      label=""
+    >
+      Podcast to make you smarter
+    </div>
 
     <div class="py-1.5"></div>
 
@@ -46,10 +48,12 @@ import HomeCard from '@/components/HomeCard.vue';
   </div>
 
   <div class="p-4">
-    <Button
-      class="text-white text-2xl font-semibold cursor-pointer"
-      label="Recommended radio"
-    />
+    <div
+      class="text-white text-2xl font-semibold border-2 border-[#20d464] p-3 inline-block"
+      label=""
+    >
+      Recommended radio
+    </div>
 
     <div class="py-1.5"></div>
 
@@ -86,10 +90,12 @@ import HomeCard from '@/components/HomeCard.vue';
   </div>
 
   <div class="p-4">
-    <Button
-      class="text-white text-2xl font-semibold cursor-pointer"
-      label="Recommended songs"
-    />
+    <div
+      class="text-white text-2xl font-semibold border-2 border-[#20d464] p-3 inline-block"
+      label=""
+    >
+      Recommended songs
+    </div>
 
     <div class="py-1.5"></div>
 

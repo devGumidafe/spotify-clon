@@ -3,13 +3,20 @@ import { ref } from 'vue';
 
 import type { Artist } from '@/models/artist';
 import type { Track } from '@/models/track';
-import data from '@/data/artist.json';
+import data from '@/data/playlist.json';
+
+const { playList } = data;
 
 export const useSongStore = defineStore('song', () => {
+  const currentPlayList = ref();
   const isPlaying = ref(false);
   const audio = ref<HTMLAudioElement | undefined>();
   const currentTrack = ref<Track | null>();
   const currentArtist = ref<Artist | null>();
+
+  const loadPlayList = (idPlaylist: number) => {
+    currentPlayList.value = playList.find((playlist) => playlist.id === idPlaylist);
+  };
 
   const loadSong = (artist: Artist, track: Track) => {
     currentArtist.value = artist;
@@ -51,28 +58,28 @@ export const useSongStore = defineStore('song', () => {
   };
 
   const prevSong = (currentTrack: Track) => {
-    const track = data.tracks[currentTrack.id - 2];
-    loadSong(data, track);
+    const track = currentPlayList.value.tracks[currentTrack.id - 2];
+    loadSong(currentPlayList.value, track);
   };
 
   const nextSong = (currentTrack: Track) => {
-    if (currentTrack.id === data.tracks.length) {
-      const track = data.tracks[0];
-      loadSong(data, track);
+    if (currentTrack.id === currentPlayList.value.tracks.length) {
+      const track = currentPlayList.value.tracks[0];
+      loadSong(currentPlayList.value, track);
     } else {
-      const track = data.tracks[currentTrack.id];
-      loadSong(data, track);
+      const track = currentPlayList.value.tracks[currentTrack.id];
+      loadSong(currentPlayList.value, track);
     }
   };
 
   const playFromFirst = () => {
     resetState();
-
-    const track = data.tracks[0];
-    loadSong(data, track);
+    const track = currentPlayList.value.tracks[0];
+    loadSong(currentPlayList.value, track);
   };
 
   const resetState = () => {
+    currentPlayList.value = playList[0];
     isPlaying.value = false;
     audio.value = undefined;
     currentTrack.value = null;
@@ -90,5 +97,7 @@ export const useSongStore = defineStore('song', () => {
     prevSong,
     nextSong,
     playFromFirst,
+    loadPlayList,
+    currentPlayList
   };
 });

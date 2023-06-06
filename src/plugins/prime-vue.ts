@@ -5,6 +5,7 @@ import Avatar from 'primevue/avatar';
 import Menu from 'primevue/menu';
 import Image from 'primevue/image';
 import Slider from 'primevue/slider';
+import AutoComplete from 'primevue/autocomplete';
 
 const components = [
     Button,
@@ -13,7 +14,8 @@ const components = [
     Card,
     Menu,
     Image,
-    Slider
+    Slider,
+    AutoComplete
 ];
 
 export const usePrimeVueComponentents = (app: any) => {

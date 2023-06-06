@@ -24,8 +24,8 @@ onMounted(() => {
 
   if (currentTrack.value) {
     seeker.value.addEventListener('change', function () {
-      const time = audio.value.duration * (seeker.value.value / 100);
-      audio.value.currentTime = time;
+      const time = audio.value!.duration * (seeker.value.value / 100);
+      audio.value!.currentTime = time;
     });
 
     seeker.value.addEventListener('mousedown', function () {
@@ -34,7 +34,7 @@ onMounted(() => {
     });
 
     seeker.value.addEventListener('mouseup', function () {
-      audio.value.play();
+      audio.value!.play();
       isPlaying.value = true;
     });
 
@@ -42,24 +42,24 @@ onMounted(() => {
       const clickPosition =
         (e.pageX - seekerContainer.value.offsetLeft) /
         seekerContainer.value.offsetWidth;
-      const time = audio.value.duration * clickPosition;
-      audio.value.currentTime = time;
+      const time = audio.value!.duration * clickPosition;
+      audio.value!.currentTime = time;
       seeker.value.value =
-        (100 / audio.value.duration) * audio.value.currentTime;
+        (100 / audio.value!.duration) * audio.value!.currentTime;
     });
   }
 });
 
 const timeUpdate = () => {
   audio.value?.addEventListener('timeupdate', function () {
-    const minutes = Math.floor(audio.value.currentTime / 60);
-    const seconds = Math.floor(audio.value.currentTime % 60);
+    const minutes = Math.floor(audio.value!.currentTime / 60);
+    const seconds = Math.floor(audio.value!.currentTime % 60);
     isTrackTimeCurrent.value = `${minutes}:${seconds
       .toString()
       .padStart(2, '0')}`;
 
-    const value = audio.value.duration
-      ? (100 / audio.value.duration) * audio.value.currentTime
+    const value = audio.value!.duration
+      ? (100 / audio.value!.duration) * audio.value!.currentTime
       : 0;
     range.value = value;
     seeker.value.value = value;
@@ -68,7 +68,7 @@ const timeUpdate = () => {
 
 const loadMetadata = () => {
   audio.value?.addEventListener('loadedmetadata', function () {
-    const duration = audio.value.duration || 0;
+    const duration = audio.value!.duration || 0;
     const minutes = Math.floor(duration / 60);
     const seconds = Math.floor(duration % 60);
     isTrackTimeTotal.value = `${minutes}:${seconds

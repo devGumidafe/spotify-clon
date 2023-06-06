@@ -14,7 +14,7 @@ let volume = ref();
 
 onMounted(() => {
   volume.value.addEventListener('input', (e: any) => {
-    audio.value.volume = e.currentTarget.value / 100;
+    audio.value!.volume = e.currentTarget.value / 100;
   });
 });
 </script>

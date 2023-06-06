@@ -15,7 +15,9 @@ export const useSongStore = defineStore('song', () => {
   const currentArtist = ref<Artist | null>();
 
   const loadPlayList = (idPlaylist: number) => {
-    currentPlayList.value = playList.find((playlist) => playlist.id === idPlaylist);
+    currentPlayList.value = playList.find(
+      (playlist) => playlist.id === idPlaylist
+    );
   };
 
   const loadSong = (artist: Artist, track: Track) => {
@@ -98,6 +100,6 @@ export const useSongStore = defineStore('song', () => {
     nextSong,
     playFromFirst,
     loadPlayList,
-    currentPlayList
+    currentPlayList,
   };
 });

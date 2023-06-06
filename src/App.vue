@@ -17,7 +17,7 @@ onMounted(() =>{
 
 <template>
   <div>
-    <TopBar />
+   <!--  <TopBar /> -->
 
     <nav id="sideNav" class="h-screen w-[240px] p-6 fixed z-50 bg-black">
       <RouterLink to="/">
@@ -31,7 +31,7 @@ onMounted(() =>{
   <div
     class="fixed right-0 top-0 w-[calc(100%-240px)] overflow-auto h-full bg-gradient-to-b from-[#1C1C1C] to-black"
   >
-    <div class="mt-[70px]"></div>
+    <div class="mt-[10px]"></div>
     <RouterView />
     <div class="mb-[100px]"></div>
   </div>

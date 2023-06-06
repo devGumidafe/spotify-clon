@@ -27,12 +27,12 @@ const likedTracks = ref<Track[]>(likeSongs.value);
 onMounted(() => {
   useSong.loadPlayList(3);
   artist.value = currentPlayList.value;
-  artist.value.tracks = likedTracks.value; 
+  artist.value!.tracks = likedTracks.value; 
 });
 
 watch(likeSongs, () => {
   likedTracks.value = likeSongs.value;
-  artist.value.tracks = likedTracks.value;
+  artist.value!.tracks = likedTracks.value;
 });
 </script>
 

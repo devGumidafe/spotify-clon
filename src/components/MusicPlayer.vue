@@ -38,7 +38,7 @@ onMounted(() => {
       isPlaying.value = true;
     });
 
-    seekerContainer.value.addEventListener('click', function (e) {
+    seekerContainer.value.addEventListener('click', function (e: any) {
       const clickPosition =
         (e.pageX - seekerContainer.value.offsetLeft) /
         seekerContainer.value.offsetWidth;

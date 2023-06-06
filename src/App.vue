@@ -21,7 +21,7 @@ onMounted(() =>{
 
     <nav id="sideNav" class="h-screen w-[240px] p-6 fixed z-50 bg-black">
       <RouterLink to="/">
-        <Image src="./images/spotify-logo.svg" alt="Logo Spotify" width="125" />
+        <Image src="./images/spotify-logo.webp" alt="Logo Spotify" width="125" />
       </RouterLink>
 
       <SideBar />

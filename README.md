@@ -24,6 +24,6 @@ npm install
 - **Web** - (https://www.gumidev.com)
 
 ## Demo
-[Demo APP](https://front-hospital-dashboard.vercel.app/)
+[Demo APP](https://spotifyclon.gumidev.com/)
 
 

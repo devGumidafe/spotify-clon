@@ -24,6 +24,6 @@ npm install
 - **Web** - (https://www.gumidev.com)
 
 ## Demo
-[Demo APP](https://spotifyclon.gumidev.com/)
+[Demo APP](https://spotify-clon-lovat.vercel.app/)
 
 
